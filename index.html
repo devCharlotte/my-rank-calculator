@@ -23,16 +23,21 @@
             padding: 8px;
             margin: 5px;
         }
+        .result-highlight {
+            color: blue;
+            font-weight: bold;
+        }
     </style>
 </head>
 <body>
     <h1>석차 계산기</h1>
     <p>Enter score, class average, standard deviation, and total students:</p>
-    <input type="number" id="score" placeholder="원점수" required>
+    
+    <input type="number" id="score" placeholder="원점수" required><br>
     <input type="number" id="avg" placeholder="과목평균" required>
     <input type="number" id="stdDev" placeholder="표준편차" required>
     <input type="number" id="totalStudents" placeholder="학생수" required>
-    <button onclick="calculateRank()">Calculate</button>
+    <br><button onclick="calculateRank()">Calculate</button>
 
     <h2 id="result"></h2>
 
@@ -52,7 +57,7 @@
 
             // Display result
             document.getElementById("result").innerHTML = 
-                `전체 ${totalStudents}명 중 ${rank}등이며, 상위 ${percentileRank.toFixed(2)}%입니다.`;
+                `전체 ${totalStudents}명 중 <span class="result-highlight">${rank}등</span>이며, 상위 <span class="result-highlight">${percentileRank.toFixed(2)}%</span>입니다.`;
         }
 
         // Error function approximation

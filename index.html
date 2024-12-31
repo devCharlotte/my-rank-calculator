@@ -14,32 +14,98 @@
 
         body {
             font-family: 'HakgyoansimGeurimilgiTTF-R', Arial, sans-serif;
-            max-width: 600px;
-            margin: auto;
-            padding: 20px;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .calculator-container {
+            background: #fff;
+            padding: 30px 40px;
+            border-radius: 15px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
             text-align: center;
+            max-width: 500px;
+            width: 90%;
         }
-        input, button {
-            padding: 8px;
-            margin: 5px;
+
+        h1 {
+            font-size: 2.5rem;
+            color: #333;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
+
+        p {
+            font-size: 1rem;
+            margin: 10px 0;
+            color: #555;
+        }
+
+        input {
+            font-family: inherit;
+            font-size: 1rem;
+            padding: 10px;
+            width: 80%;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+        }
+
+        input:focus {
+            outline: none;
+            border-color: #62b6f0;
+            box-shadow: 0 0 10px rgba(98, 182, 240, 0.6);
+        }
+
+        button {
+            font-family: inherit;
+            font-size: 1.1rem;
+            padding: 10px 20px;
+            background-color: #62b6f0;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #358fda;
+            box-shadow: 0 4px 10px rgba(98, 182, 240, 0.5);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            color: #333;
+            margin-top: 20px;
+        }
+
         .result-highlight {
-            color: blue;
+            color: #62b6f0;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
-    <h1>석차 계산기</h1>
-    <p>Enter score, class average, standard deviation, and total students:</p>
-    
-    <input type="number" id="score" placeholder="원점수" required><br>
-    <input type="number" id="avg" placeholder="과목평균" required>
-    <input type="number" id="stdDev" placeholder="표준편차" required>
-    <input type="number" id="totalStudents" placeholder="학생수" required>
-    <br><button onclick="calculateRank()">Calculate</button>
+    <div class="calculator-container">
+        <h1>석차 계산기</h1>
+        <p>원점수, 과목평균, 표준편차, 학생 수를 입력하세요:</p>
+        
+        <input type="number" id="score" placeholder="원점수" required><br>
+        <input type="number" id="avg" placeholder="과목평균" required>
+        <input type="number" id="stdDev" placeholder="표준편차" required>
+        <input type="number" id="totalStudents" placeholder="학생수" required>
+        <br>
+        <button onclick="calculateRank()">계산하기</button>
 
-    <h2 id="result"></h2>
+        <h2 id="result"></h2>
+    </div>
 
     <script>
         function calculateRank() {

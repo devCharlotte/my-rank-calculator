@@ -16,7 +16,7 @@
             font-family: 'HakgyoansimGeurimilgiTTF-R', Arial, sans-serif;
             margin: 0;
             padding: 0;
-            background: linear-gradient(120deg, #a1c4fd, #c2e9fb);
+            background: linear-gradient(135deg, #ff9a9e, #fad0c4);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -24,50 +24,51 @@
         }
 
         .calculator-container {
-            background: #fff;
+            background: #ffffff;
             padding: 30px 40px;
             border-radius: 15px;
-            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
             text-align: center;
             max-width: 500px;
             width: 90%;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             color: #333;
             margin-bottom: 20px;
             text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
         }
 
         p {
-            font-size: 1rem;
-            margin: 10px 0;
+            font-size: 1.2rem;
+            margin-bottom: 20px;
             color: #555;
         }
 
         input {
             font-family: inherit;
-            font-size: 1rem;
+            font-size: 1.2rem;
             padding: 10px;
             width: 80%;
             margin: 10px 0;
             border: 2px solid #ddd;
             border-radius: 10px;
+            box-sizing: border-box;
             transition: all 0.3s ease;
         }
 
         input:focus {
             outline: none;
-            border-color: #62b6f0;
-            box-shadow: 0 0 10px rgba(98, 182, 240, 0.6);
+            border-color: #ff79c6;
+            box-shadow: 0 0 8px rgba(255, 121, 198, 0.5);
         }
 
         button {
             font-family: inherit;
-            font-size: 1.1rem;
+            font-size: 1.2rem;
             padding: 10px 20px;
-            background-color: #62b6f0;
+            background-color: #ff79c6;
             color: white;
             border: none;
             border-radius: 10px;
@@ -76,8 +77,8 @@
         }
 
         button:hover {
-            background-color: #358fda;
-            box-shadow: 0 4px 10px rgba(98, 182, 240, 0.5);
+            background-color: #ff47b2;
+            box-shadow: 0 4px 10px rgba(255, 121, 198, 0.5);
         }
 
         h2 {
@@ -87,14 +88,14 @@
         }
 
         .result-highlight {
-            color: #62b6f0;
+            color: #ff79c6;
             font-weight: bold;
         }
     </style>
 </head>
 <body>
     <div class="calculator-container">
-        <h1>석차 계산기</h1>
+        <h1>준희의 석차 계산기</h1>
         <p>원점수, 과목평균, 표준편차, 학생 수를 입력하세요:</p>
         
         <input type="number" id="score" placeholder="원점수" required><br>

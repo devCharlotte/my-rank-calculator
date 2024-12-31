@@ -117,17 +117,19 @@
 
             // z-score 계산
             const zScore = (score - avg) / stdDev;
+
+            // Percentile 계산 (상위 백분위수)
             const percentileRank = 0.5 * (1 + erf(zScore / Math.sqrt(2))) * 100;
 
             // 석차 계산
-            const rank = Math.round(totalStudents * (1 - percentileRank / 100));
+            const rank = Math.ceil((100 - percentileRank) / 100 * totalStudents);
 
             // 상위 퍼센트 계산
-            const topPercent = ((totalStudents - rank + 1) / totalStudents) * 100;
+            const topPercent = (percentileRank).toFixed(2);
 
             // 결과 표시
             document.getElementById("result").innerHTML = 
-                `전체 ${totalStudents}명 중 <span class="result-highlight">${rank}등</span>이며, 상위 <span class="result-highlight">${topPercent.toFixed(2)}%</span>입니다.`;
+                `전체 ${totalStudents}명 중 <span class="result-highlight">${rank}등</span>이며, 상위 <span class="result-highlight">${topPercent}%</span>입니다.`;
         }
 
         // Error function approximation
